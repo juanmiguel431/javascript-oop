@@ -89,7 +89,7 @@ function Stopwatch() {
 
     state = 'disabled';
     end = new Date();
-    duration = (end - start) / 1000;
+    duration += (end - start) / 1000;
   };
 
   this.reset = function () {
