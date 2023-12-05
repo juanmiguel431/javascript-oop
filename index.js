@@ -10,12 +10,12 @@ function createUser(givenName, surname) {
   };
 }
 
-//Constructor function
+// Constructor function
 function User(givenName, surname) {
   this.firstName = givenName;
   this.lastName = surname;
   this.fullName = function () {
-    return `${givenName} ${surname}`;
+    return `${this.firstName} ${this.lastName}`;
   };
 }
 
@@ -25,5 +25,6 @@ console.log(user1.fullName());
 
 const user2 = new User('Jayleen', 'Ortega');
 console.log(user2.firstName);
+console.log(user2.lastName);
 console.log(user2.fullName());
 
