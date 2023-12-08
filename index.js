@@ -1,6 +1,8 @@
+let s;
 import('./stack.js').then((module) => {
   const Stack = module.default;
   const stack = new Stack();
+  s = stack;
 
   stack.push(25);
   stack.push(2);
