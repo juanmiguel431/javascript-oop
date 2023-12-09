@@ -1,41 +1,35 @@
-let s;
-let Stack;
-import('./stack.js').then((module) => {
-  Stack = module.default;
+const stack = import('./stack.js');
+const htmlElement = import('./htmlElement.js');
+const htmlSelectElement = import('./htmlSelectElement.js');
+const htmlImageElement = import('./htmlImageElement.js');
 
+const promises = Promise.all([stack, htmlElement, htmlSelectElement, htmlImageElement]);
+
+let s, e, select, image;
+let Stack, HtmlElement, HtmlSelectElement, HtmlImageElement;
+
+promises.then(values => {
+  Stack = values[0].default;
+  HtmlElement = values[1].default;
+  HtmlSelectElement = values[2].default;
+  HtmlImageElement = values[3].default;
+
+  // Stack
   const stack = new Stack();
   s = stack;
-
   stack.push(25);
   stack.push(2);
-
   // console.log(stack.count);
-});
 
-let e;
-let HtmlElement;
-import('./htmlElement.js').then(module => {
-  HtmlElement = module.default;
-
+  // HtmlElement
   e = new HtmlElement();
-});
 
-let select;
-let HtmlSelectElement;
-import('./htmlSelectElement.js').then(module => {
-  HtmlSelectElement = module.default;
+  // Select
   select = new HtmlSelectElement([25, 12, 36]);
-});
 
-
-let HtmlImageElement;
-let image;
-import('./htmlImageElement.js').then(module => {
-  HtmlImageElement = module.default;
-
+  // Image
   image = new HtmlImageElement('https://www.google.com');
 });
-
 
 // // Factory function
 // function createUser(givenName, surname) {
