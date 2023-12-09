@@ -9,7 +9,7 @@ import('./stack.js').then((module) => {
   stack.push(25);
   stack.push(2);
 
-  console.log(stack.count);
+  // console.log(stack.count);
 });
 
 let e;
@@ -26,6 +26,16 @@ import('./htmlSelectElement.js').then(module => {
   HtmlSelectElement = module.default;
   select = new HtmlSelectElement([25, 12, 36]);
 });
+
+
+let HtmlImageElement;
+let image;
+import('./htmlImageElement.js').then(module => {
+  HtmlImageElement = module.default;
+
+  image = new HtmlImageElement('https://www.google.com');
+});
+
 
 // // Factory function
 // function createUser(givenName, surname) {
