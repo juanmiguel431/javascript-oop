@@ -16,6 +16,19 @@ function HtmlSelectElement(options) {
     list.splice(index, 1);
   }
 
+  this.render = function () {
+    const list = _items.get(this);
+    let result = `<select>`;
+
+    list.map(e => {
+      result += `\r\n  <option>${e}</option>`;
+    });
+
+    result += `\r\n</select>`;
+
+    return result;
+  }
+
   Object.defineProperty(this, 'items', {
     get() {
       return _items.get(this);

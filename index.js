@@ -24,7 +24,7 @@ let select;
 let HtmlSelectElement;
 import('./htmlSelectElement.js').then(module => {
   HtmlSelectElement = module.default;
-  select = new HtmlSelectElement();
+  select = new HtmlSelectElement([25, 12, 36]);
 });
 
 // // Factory function
