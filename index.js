@@ -29,6 +29,12 @@ promises.then(values => {
 
   // Image
   image = new HtmlImageElement('https://www.google.com');
+
+  const elements = [select, image];
+
+  for (const e of elements) {
+    console.log(e.render());
+  }
 });
 
 // // Factory function
