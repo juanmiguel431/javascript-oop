@@ -10,6 +10,13 @@ import('./stack.js').then((module) => {
   console.log(stack.count);
 });
 
+let e;
+import('./htmlElement.js').then(module => {
+  const HtmlElement = module.default;
+
+  e = new HtmlElement();
+});
+
 // // Factory function
 // function createUser(givenName, surname) {
 //   return {
