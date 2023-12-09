@@ -1,6 +1,8 @@
 let s;
+let Stack;
 import('./stack.js').then((module) => {
-  const Stack = module.default;
+  Stack = module.default;
+
   const stack = new Stack();
   s = stack;
 
@@ -11,10 +13,18 @@ import('./stack.js').then((module) => {
 });
 
 let e;
+let HtmlElement;
 import('./htmlElement.js').then(module => {
-  const HtmlElement = module.default;
+  HtmlElement = module.default;
 
   e = new HtmlElement();
+});
+
+let select;
+let HtmlSelectElement;
+import('./htmlSelectElement.js').then(module => {
+  HtmlSelectElement = module.default;
+  select = new HtmlSelectElement();
 });
 
 // // Factory function
