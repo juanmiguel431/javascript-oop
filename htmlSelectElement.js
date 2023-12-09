@@ -23,4 +23,7 @@ function HtmlSelectElement(options) {
   })
 }
 
+HtmlSelectElement.prototype = new HtmlElement();
+HtmlSelectElement.prototype.constructor = HtmlSelectElement;
+
 export default HtmlSelectElement;
