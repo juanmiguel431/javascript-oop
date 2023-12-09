@@ -18,15 +18,7 @@ function HtmlSelectElement(options) {
 
   this.render = function () {
     const list = _items.get(this);
-    let result = `<select>`;
-
-    list.map(e => {
-      result += `\r\n  <option>${e}</option>`;
-    });
-
-    result += `\r\n</select>`;
-
-    return result;
+    return `<select>${list.map(e => `\r\n  <option>${e}</option>`).join('')}\r\n</select>`;
   }
 
   Object.defineProperty(this, 'items', {
